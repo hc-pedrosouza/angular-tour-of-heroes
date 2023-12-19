@@ -3,6 +3,7 @@ import { UpperCasePipe, NgFor } from '@angular/common';
 import { IHero } from '../interfaces/hero.dto';
 import { HeroDetailComponent } from '../hero-detail/hero-detail.component';
 import { HeroService } from '../hero/hero.service';
+import { MessageService } from '../message/message.service';
 
 @Component({
   selector: 'app-heroes',
@@ -12,7 +13,7 @@ import { HeroService } from '../hero/hero.service';
   styleUrl: './heroes.component.scss',
 })
 export class HeroesComponent {
-  constructor(private heroService: HeroService) {}
+  constructor(private heroService: HeroService, private messageService: MessageService) {}
 
   heroes: Array<IHero> = [];
   selectedHero?: IHero;
