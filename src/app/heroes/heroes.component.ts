@@ -15,12 +15,12 @@ import { MessageService } from '../message/message.service';
 export class HeroesComponent {
   constructor(private heroService: HeroService, private messageService: MessageService) {}
 
-  heroes: Array<IHero> = [];
   selectedHero?: IHero;
+  heroes: Array<IHero> = [];
 
   onSelect(hero: IHero): void {
     this.selectedHero = hero;
-    console.log(this.selectedHero);
+    this.messageService.add(`HeroesComponent: Selected hero id=${hero.id}`)
   }
 
   getHeroes(): void {
